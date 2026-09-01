@@ -5,7 +5,7 @@
 #define DHTPIN 2
 #define DHTTYPE DHT11
 DHT dht(DHTPIN, DHTTYPE);
-LiquidCrystal_I2C lcd(0x27, 16, 2); // // Untuk di protheus pakai LCD Address 20 dan 27 untuk di percobaan realtimenya
+LiquidCrystal_I2C lcd(0x27, 16, 2); // Untuk di protheus pakai LCD Address 20 dan 27 untuk di percobaan realtimenya
 
 void setup() {
   lcd.init();
