@@ -7,9 +7,9 @@ void setup() {
   lcd.init();
   lcd.backlight();
   lcd.setCursor(0, 0);
-  lcd.print("LAB.......FISIKA");
+  lcd.print("-SEMANGAT TERUS-");
   lcd.setCursor(0, 1);
-  lcd.print("..INSTRUMENTASI.");
+  lcd.print("--PRAKTIKUMNYA--");
 }
 
 void loop() {
