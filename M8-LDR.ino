@@ -7,10 +7,10 @@ void setup() {
   lcd.init();
   lcd.backlight();
   lcd.setCursor(0, 0);
-  lcd.print("..LDR SENSOR..");
+  lcd.print("..SENSOR LDR..");
   lcd.setCursor(0, 1);
   lcd.print("....SIMULASI....");
-  delay(1000);
+  delay(2000);
   lcd.clear();
 }
 
