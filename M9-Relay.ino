@@ -4,7 +4,7 @@
 LiquidCrystal_I2C lcd(0x20, 16, 2); // Untuk di protheus pakai LCD Address 20 dan 27 untuk di percobaan realtimenya
 
 void setup() {
-  pinMode(13, OUTPUT)
+  pinMode(13, OUTPUT);
   lcd.init();
   lcd.backlight();
   lcd.setCursor(0, 0);
