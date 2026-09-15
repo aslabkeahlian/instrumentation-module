@@ -1,4 +1,5 @@
 // PROSES KEDUA DARI LOADCELL
+// Setelah ngekalibrasi timbangan, baru kita bisa menggunakan timbangan seperti biasa dengan kodingan ini
 
 #include "HX711.h"
 #include <LiquidCrystal_I2C.h>
