@@ -12,9 +12,9 @@ void setup() {
   lcd.init();
   lcd.backlight();
   lcd.setCursor(0, 0);
-  lcd.print("SENSOR H EFFECT");
+  lcd.print("SENSOR EFEK HALL");
   lcd.setCursor(0, 1);
-  lcd.print("....SIMULASI....");
+  lcd.print("    SIMULASI    ");
   delay(1000);
   lcd.clear();
 }
@@ -42,11 +42,11 @@ void loop() {
   }
 
   lcd.setCursor(0, 0);
-  lcd.print("SENSOR H EFFECT ");
+  lcd.print("SENSOR EFEK HALL");
   lcd.setCursor(0, 1);
 
   if (alatMati) {
-    lcd.print("ALAT MATI       ");
+    lcd.print("   ALAT MATI   ");
   } else {
     float seconds = (micros() - start) / 1000000.0;
     float rpm = (cnt / seconds) * 60.0;
