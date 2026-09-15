@@ -12,7 +12,7 @@ void setup() {
   lcd.setCursor(0, 0);
   lcd.print("SENSOR TEGANGAN");
   lcd.setCursor(0, 1);
-  lcd.print("....SIMULASI....");
+  lcd.print("    SIMULASI    ");
   delay(2000);
   lcd.clear();
 }
@@ -28,5 +28,5 @@ void loop() {
   lcd.print(voltage, 2); 
   lcd.setCursor(15, 1);
   lcd.print("V");
-  delay(1000);
+  delay(500);
 }
