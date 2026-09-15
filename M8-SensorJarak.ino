@@ -13,9 +13,9 @@ void setup() {
   lcd.init();
   lcd.backlight();
   lcd.setCursor(0, 0);
-  lcd.print("..SENSOR JARAK..");
+  lcd.print("--SENSOR JARAK--");
   lcd.setCursor(0, 1);
-  lcd.print("....SIMULASI....");
+  lcd.print("    SIMULASI    ");
   delay(2000);
   lcd.clear();
 }
@@ -29,7 +29,7 @@ void loop() {
   long duration = pulseIn(echoPin, HIGH);
   int distance = duration * 0.034 / 2;
   lcd.setCursor(0, 0);
-  lcd.print("..JARAK OBJEK...");
+  lcd.print("--SENSOR JARAK--");
   lcd.setCursor(0, 1);
   lcd.print("Jarak = ");
   lcd.setCursor(8, 1);
