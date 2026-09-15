@@ -12,9 +12,9 @@ void setup() {
   lcd.backlight();
   dht.begin();
   lcd.setCursor(0, 0);
-  lcd.print("..DHT11 SENSOR..");
+  lcd.print("--SENSOR DHT11--");
   lcd.setCursor(0, 1);
-  lcd.print("....SIMULASI....");
+  lcd.print("    SIMULASI    ");
   delay(2000);
   lcd.clear();
 }
@@ -25,9 +25,9 @@ void loop() {
   
   if (isnan(h) || isnan(t)) {
     lcd.setCursor(0, 0);
-    lcd.print("-GAGAL MEMBACA--");
+    lcd.print("--SENSOR DHT11--");
     lcd.setCursor(0, 1);
-    lcd.print("---SENSOR DHT---");
+    lcd.print(" GAGAL MEMBACA. ");
     delay(2000);
     return;
   }
