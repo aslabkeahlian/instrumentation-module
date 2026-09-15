@@ -8,10 +8,10 @@ void setup() {
   lcd.init();
   lcd.backlight();
   lcd.setCursor(0, 0);
-  lcd.print("..SENSOR NTC..");
+  lcd.print("---SENSOR NTC---");
   lcd.setCursor(0, 1);
-  lcd.print("....SIMULASI....");
-  delay(1000);
+  lcd.print("    SIMULASI    ") :
+  delay(2000);
   lcd.clear();
 }
 
@@ -22,7 +22,7 @@ void loop() {
   float result = hasil1 - 273.15; // Konversi dari Kelvin ke Celcius
 
   lcd.setCursor(0, 0);
-  lcd.print("--SUHU (NTC)-- ");
+  lcd.print("---SENSOR NTC---");
   lcd.setCursor(0, 1);
   lcd.print("Suhu = ");
   lcd.setCursor(8, 1);
