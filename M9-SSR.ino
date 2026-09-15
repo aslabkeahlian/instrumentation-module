@@ -1,25 +1,25 @@
 #include <Wire.h> 
 #include <LiquidCrystal_I2C.h>
 
-LiquidCrystal_I2C lcd(0x27,16,2);  // set the LCD address to 0x27 for a 16 chars and 2 line display
+LiquidCrystal_I2C lcd(0x27,16,2);  // Untuk di protheus pakai LCD Address 20 dan 27 untuk di percobaan realtimenya
 
 void setup() {
   pinMode(10,OUTPUT);
   lcd.init();
   lcd.backlight();
   lcd.setCursor(0,0);
-  lcd.print("LAB.......FISIKA");
+  lcd.print("--AKTUATOR SSR--");
   lcd.setCursor(0,1);
-  lcd.print("..INSTRUMENTASI.");
+  lcd.print("    SIMULASI    ");
   delay(1000);
 }
 void loop() {
   int sensorValue = analogRead(A0);
   int Pwm_value = map(sensorValue,0,1023,0,255);
   lcd.setCursor(0,0);
-  lcd.print("------SSR-------");
+  lcd.print("--AKTUATOR SSR--");
   lcd.setCursor(0,1);
-  lcd.print("SSR = ");
+  lcd.print("PWM = ");
   lcd.setCursor(6,1);
   lcd.print(Pwm_value);
   analogWrite(10,Pwm_value);
