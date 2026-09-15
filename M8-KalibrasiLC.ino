@@ -1,3 +1,5 @@
+// PROSES PERTAMA DARI LOADCELL
+
 #include "HX711.h"
 #include <LiquidCrystal_I2C.h>
 
