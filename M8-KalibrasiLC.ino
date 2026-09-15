@@ -1,4 +1,5 @@
 // PROSES PERTAMA DARI LOADCELL
+// Dikodingan ini, kita ngekalibrasi dulu timbangan dengan berat benda yang mau ditimbang.
 
 #include "HX711.h"
 #include <LiquidCrystal_I2C.h>
