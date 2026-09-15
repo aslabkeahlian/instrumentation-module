@@ -3,13 +3,14 @@
 
 LiquidCrystal_I2C lcd(0x20, 16, 2);    // Untuk di protheus pakai LCD Address 20 dan 27 untuk di percobaan realtimenya
 
+// Ini untuk tampilan awal LCD
 void setup() {
   lcd.init();
   lcd.backlight();
   lcd.setCursor(0, 0);
-  lcd.print("-SEMANGAT TERUS-");
+  lcd.print(" PRAK KEAHLIAN  ");
   lcd.setCursor(0, 1);
-  lcd.print("--PRAKTIKUMNYA--");
+  lcd.print(" INSTRUMENTASI  ");
 }
 
 void loop() {
