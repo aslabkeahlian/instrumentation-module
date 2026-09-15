@@ -1,3 +1,8 @@
+// PERBEDAAN DENGAN V2 :
+// Perbedaannya adalah kodingan ini membatasi gerak servonya karena panjang pulsa yg dihasilin berbeda dengan yang ditampilkan LCD
+// Sebagai contoh : secara teori 1 m/s = 0º ; 1.5 m/s = 90º ; 2 m/s = 180º 
+//                  realita dari osiloskop 0.5 m/s = 0º ; 1.5 m/s = 90º ; 2.5 m/s = 180º
+
 #include <Servo.h>
 #include <Wire.h> 
 #include <LiquidCrystal_I2C.h>
