@@ -10,7 +10,7 @@ void setup() {
   lcd.setCursor(0, 0);
   lcd.print("SENSOR INFRARED");
   lcd.setCursor(0, 1);
-  lcd.print("....SIMULASI....");
+  lcd.print("    SIMULASI    ");
   delay(2000);
   lcd.clear();
 }
@@ -18,14 +18,14 @@ void setup() {
 void loop() {
   byte sensorValue = digitalRead(7);
   lcd.setCursor(0, 0);
-  if (sensorValue == HIGH) {
-    lcd.print("...TERDETEKSI...");
+  if (sensorValue == LOW) {
+    lcd.print("  ---OBJEK---  ");
     lcd.setCursor(0, 1);
-    lcd.print(".....OBJEK......");
+    lcd.print("   TERDETEKSI   ");
   } else {
-    lcd.print(".TDK TERDETEKSI.");
+    lcd.print("  ---OBJEK---  ");
     lcd.setCursor(0, 1);
-    lcd.print(".....OBJEK......");
+    lcd.print("TIDAK TERDETEKSI");
   }
 
   delay(500);
