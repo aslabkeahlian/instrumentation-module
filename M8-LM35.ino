@@ -7,17 +7,17 @@ void setup() {
   lcd.init();
   lcd.backlight();
   lcd.setCursor(0, 0);
-  lcd.print("..LM35 SENSOR..");
+  lcd.print("--SENSOR LM-35--");
   lcd.setCursor(0, 1);
-  lcd.print("....SIMULASI....");
+  lcd.print("    SIMULASI    ");
   delay(2000);
   lcd.clear(); 
 }
 
 void loop() {
-  float sensorValue = analogRead(A0) * 0.48875; // kalau bermasalah pinoutnya bisa diganti jadi A1 atau A(n)
+  float sensorValue = analogRead(A0) * 0.48875;
   lcd.setCursor(0, 0);
-  lcd.print("--SUHU (LM-35)--");
+  lcd.print("--SENSOR LM-35--");
   lcd.setCursor(0, 1);
   lcd.print("Suhu = ");
   lcd.setCursor(8, 1);
