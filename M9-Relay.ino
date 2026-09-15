@@ -10,7 +10,7 @@ void setup() {
   lcd.setCursor(0, 0);
   lcd.print(" AKTUATOR RELAY ");
   lcd.setCursor(0, 1);
-  lcd.print("....SIMULASI....");
+  lcd.print("    SIMULASI    ");
   delay(1000);
   lcd.clear();
 }
@@ -18,7 +18,7 @@ void setup() {
 void loop() {
   digitalWrite(13, HIGH);
   lcd.setCursor(0, 0);
-  lcd.print(" ....RELAY.... ");
+  lcd.print(" AKTUATOR RELAY ");
   lcd.setCursor(0, 1);
   lcd.print(".....AKTIF......");
   delay(3000);
@@ -26,7 +26,7 @@ void loop() {
 
   digitalWrite(13, LOW);
   lcd.setCursor(0, 0);
-  lcd.print(" ....RELAY.... ");
+  lcd.print(" AKTUATOR RELAY ");
   lcd.setCursor(0, 1);
   lcd.print("...TDK AKTIF....");
   delay(3000);
