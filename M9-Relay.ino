@@ -16,7 +16,7 @@ void setup() {
 }
 
 void loop() {
-  digitalWrite(13, LOW);
+  digitalWrite(13, HIGH);
   lcd.setCursor(0, 0);
   lcd.print(" AKTUATOR RELAY ");
   lcd.setCursor(0, 1);
@@ -24,7 +24,7 @@ void loop() {
   delay(3000);
   lcd.clear();
 
-  digitalWrite(13, HIGH);
+  digitalWrite(13, LOW);
   lcd.setCursor(0, 0);
   lcd.print(" AKTUATOR RELAY ");
   lcd.setCursor(0, 1);
