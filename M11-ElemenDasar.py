@@ -1,22 +1,25 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# ===== 1. DEKLARASI SINYAL (isi sendiri) =====
-n = np.arange(____, ____)          # indeks sampel
-f = ____                           # frekuensi (siklus/sampel)
-x = ____                           # x[n] = sin(2*pi*f*n)
+# ========== DEKLARASI SINYAL ==========
+n = np.arange(0, 100)             
+f = 0.05                          
+x = np.sin(2 * np.pi * f * n)     # ini sinus, coba ubah ke step atau deret pulsa (salah satunya)
 
-# ===== 2. ELEMEN DASAR (isi sendiri) =====
+# ========== FUNGSI OPERASI DASAR SINYAL ==========
 def delay(signal, k=1):
-    return ____
+    """Elemen Delay (pergeseran waktu sejauh k sampel)"""
+    return np.concatenate([np.zeros(k), signal[:-k]])
 
 def gain(signal, k=0.5):
-    return ____
+    """Elemen Gain (pengali amplitudo)"""
+    return k * signal
 
 def adder(*signals):
-    return ____
+    """Elemen Penjumlah (menjumlahkan beberapa sinyal)"""
+    return np.sum(np.array(signals), axis=0)
 
-# ===== 3. PEMROSESAN (tentukan k sendiri) =====
+# ========== PEMROSESAN (tentukan k) ==========
 x_delay = delay(x, k=____)
 x_gain  = gain(x, k=____)
 x_sum   = adder(x, x_delay)
