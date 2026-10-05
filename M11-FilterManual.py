@@ -11,7 +11,7 @@ def manual_fir(x, h):
     for n in range(len(x)):
         for k in range(len(h)):
             if n - k >= 0:
-                y[n] += h[k] * x[n - k]
+                y[n] += h[k] * x[n - k]        #rumus FIR
     return y
 
 def manual_iir(x, b, a):
@@ -19,19 +19,19 @@ def manual_iir(x, b, a):
     for n in range(len(x)):
         for k in range(len(b)):
             if n - k >= 0:
-                y[n] += b[k] * x[n - k]
+                y[n] += b[k] * x[n - k]        #rumus IIR
 
         for k in range(1, len(a)):
             if n - k >= 0:
-                y[n] -= a[k] * y[n - k]
+                y[n] -= a[k] * y[n - k]        #rumus IIR
 
         y[n] /= a[0]
     return y
 
-# ========== FILTER FIR & IIR ==========
-h_fir = [1/3, 1/3, 1/3]               
-b = [0.5]                        
-a = [1.0, -0.]                  
+# ========== FILTER FIR & IIR ==========       #ini nilai h, b, a nya diganti
+h_fir = [1/3, 1/3, 1/3]                        #nilai sum(h_fir) = 1
+b = [0.2]                        
+a = [1.0, -0.8]                  
 
 y_fir = manual_fir(x, h_fir)
 y_iir = manual_iir(x, b, a)
