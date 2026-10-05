@@ -1,6 +1,7 @@
 # ========== VARIASI YANG DIGUNAKAN ==========
 # sinyal input = sinus/sinus+noise
 # filter = pake lowpass/highpass
+# opsional = bisa dibandingin antara lowpass dan highpass
 
 import numpy as np
 import matplotlib.pyplot as plt
