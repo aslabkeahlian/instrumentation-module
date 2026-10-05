@@ -1,3 +1,7 @@
+# ========== VARIASI YANG DIGUNAKAN ==========
+# sinyal input = sinus/sinus+noise
+# filter = pake lowpass/highpass
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -30,7 +34,7 @@ def manual_iir(x, b, a):
 
 # ========== FILTER FIR & IIR ==========       #ini nilai h, b, a nya diganti
 h_fir = [1/3, 1/3, 1/3]                        #nilai sum(h_fir) = 1
-b = [0.2]                        
+b = [0.2]                                      #nilai koefisien feedback lebih kuat/lemah
 a = [1.0, -0.8]                  
 
 y_fir = manual_fir(x, h_fir)
