@@ -1,3 +1,10 @@
+# ========== LANGKAH - LANGKAH ==========
+# Pertama kalian cari/rekam suara dengan tipe file ".wav" dan diupload di folder yang sama seperti kodingan
+# Kedua dari file yang ada analisa grafik FFT dari audionya
+# Ketiga bisa lgsg pilih mau pakai filter apa
+# Keempat file yang ada bisa di filter lagi jika dirasa krg bagus
+# NOTES : kodingan bisa disesuaikan sendiri, ini bisa jadi acuan pertama kalian
+
 import numpy as np
 import scipy.io.wavfile as wav
 import matplotlib.pyplot as plt
@@ -6,15 +13,12 @@ from scipy.signal import butter, firwin, lfilter, filtfilt
 # ========== BACA AUDIO ==========
 sample_rate, data = wav.read("DataAudio.wav")
 
-# Jika stereo → ubah jadi mono
 if len(data.shape) > 1:
     data = np.mean(data, axis=1)
 
 times = np.arange(len(data)) / sample_rate
 
-# ===============================
-# TAMPILKAN FFT ORIGINAL
-# ===============================
+# ========== ANALISA FFT ==========
 fft_data = np.fft.fft(data)
 frequencies = np.fft.fftfreq(len(data), 1 / sample_rate)
 
@@ -33,9 +37,7 @@ plt.show()
 print("=== LIHAT SPEKTRUM DI ATAS ===")
 print("Gunakan grafik FFT untuk menentukan cutoff frequency yang sesuai.\n")
 
-# ===============================
-# MENU FILTER
-# ===============================
+# ========== MENU FILTER ==========
 print("=== DESAIN FILTER AUDIO ===")
 print("1. FIR Low-Pass")
 print("2. FIR High-Pass")
@@ -65,9 +67,7 @@ elif choice in [3, 6, 7, 8]:
 order = 101      # FIR
 iir_order = 6    # IIR
 
-# ===============================
-# PROSES FILTER
-# ===============================
+# ========== PROSES FILTER ==========
 if choice == 1:  # FIR Low-pass
     h = firwin(order, cutoff_norm, window="hamming", pass_zero=True)
     filtered = lfilter(h, 1.0, data)
@@ -108,39 +108,29 @@ elif choice == 8:  # IIR Band-Reject (Notch)
     filtered = filtfilt(b, a, data)
     jenis = f"IIR Butterworth Band-Reject (Notch) {lowcut}-{highcut} Hz"
 
-# ===============================
-# SIMPAN FILE HASIL
-# ===============================
+# ========== PROSES MENYIMPAN FILE ==========
 wav.write("DataAudioOut.wav", sample_rate, filtered.astype(np.int16))
 print(f"Filtered audio berhasil disimpan sebagai 'DataAudioOut.wav' ({jenis})")
 
-# ===============================
-# PLOT TIME DOMAIN
-# ===============================
+# ========== PLOT TIME DOMAIN ==========
 plt.figure(figsize=(12, 6))
-
 plt.subplot(2, 1, 1)
 plt.plot(times, data, color="gray")
 plt.title("Original Audio Signal")
 plt.xlabel("Time [s]")
 plt.ylabel("Amplitude")
 plt.grid(True)
-
 plt.subplot(2, 1, 2)
 plt.plot(times, filtered, color="blue")
 plt.title(f"Filtered Signal ({jenis})")
 plt.xlabel("Time [s]")
 plt.ylabel("Amplitude")
 plt.grid(True)
-
 plt.tight_layout()
 plt.show()
 
-# ===============================
-# PLOT FFT ORIGINAL vs FILTERED
-# ===============================
+# ========== PLOT FFT ORIGINAL vs FILTERED ==========
 fft_filtered = np.fft.fft(filtered)
-
 plt.figure(figsize=(12, 5))
 plt.plot(
     frequencies[:len(frequencies) // 2],
