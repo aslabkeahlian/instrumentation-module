@@ -1,10 +1,13 @@
+# ========== VARIASI YANG DIGUNAKAN ==========
+# sinyal input = sinus/sinus+noise/step/deret pulsa
+
 import numpy as np
 import matplotlib.pyplot as plt
 
 # ========== DEKLARASI SINYAL ==========
 n = np.arange(0, 100)             
 f = 0.05                          
-x = np.sin(2 * np.pi * f * n)     # ini sinus, coba ubah ke step atau deret pulsa (salah satunya)
+x = np.sin(2 * np.pi * f * n)                         # ini sinus, coba ubah ke step atau deret pulsa (salah satunya)
 
 # ========== FUNGSI OPERASI DASAR SINYAL ==========
 def delay(signal, k=1):
@@ -20,9 +23,9 @@ def adder(*signals):
     return np.sum(np.array(signals), axis=0)
 
 # ========== PEMROSESAN (tentukan k) ==========
-x_delay = delay(x, k=____)
-x_gain  = gain(x, k=____)
-x_sum   = adder(x, x_delay)
+x_delay = delay(x, k=____)                             # nilai delay bisa sebebasnya
+x_gain  = gain(x, k=____)                              # nilai gain bisa sebebasnya
+x_sum   = adder(x, x_delay)                            # otomatis ditambah dari nilai delay dan gain
 
 # ========== VISUALISASI HASIL ==========
 plt.figure(figsize=(12, 8))
