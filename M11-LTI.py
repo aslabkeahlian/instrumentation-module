@@ -14,8 +14,8 @@ x1 = np.sin(0.2 * np.pi * n)
 x2 = np.cos(0.3 * np.pi * n)
 x_sum = x1 + x2
 
-y1 = lfilter(h, 1, x1**2)
-y2 = lfilter(h, 1, x2**2)
+y1 = lfilter(h, 1, x1)
+y2 = lfilter(h, 1, x2)
 y_sum = lfilter(h, 1, x_sum)
 
 # ========== UJI TIME INVARIANCE ==========
