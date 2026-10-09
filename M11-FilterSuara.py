@@ -134,7 +134,7 @@ fft_filtered = np.fft.fft(filtered)
 plt.figure(figsize=(12, 5))
 plt.plot(
     frequencies[:len(frequencies) // 2],
-    np.abs(fft_data[:len(fft_data) // 2\``
+    np.abs(fft_data[:len(fft_data) // 2]),
     color="gray",
     label="Original FFT"
 )
