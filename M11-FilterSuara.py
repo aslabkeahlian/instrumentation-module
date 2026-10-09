@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 from scipy.signal import butter, firwin, lfilter, filtfilt
 
 # ========== BACA AUDIO ==========
-sample_rate, data = wav.read("DataAudio.wav")
+sample_rate, data = wav.read("DataAudio.wav")                                # tolong diisi dengan nama file rekamannya
 
 if len(data.shape) > 1:
     data = np.mean(data, axis=1)
@@ -63,7 +63,7 @@ elif choice in [3, 6, 7, 8]:
         highcut / (0.5 * sample_rate)
     ]
 
-# Parameter filter
+# Parameter filter                    # ini tidak perlu diganti, tapi bisa dicari tau kenapa nilainya segini
 order = 101      # FIR
 iir_order = 6    # IIR
 
@@ -109,7 +109,7 @@ elif choice == 8:  # IIR Band-Reject (Notch)
     jenis = f"IIR Butterworth Band-Reject (Notch) {lowcut}-{highcut} Hz"
 
 # ========== PROSES MENYIMPAN FILE ==========
-wav.write("DataAudioOut.wav", sample_rate, filtered.astype(np.int16))
+wav.write("DataAudioOut.wav", sample_rate, filtered.astype(np.int16))               # ini nama filenya juga diganti sesuai preferensi kalian
 print(f"Filtered audio berhasil disimpan sebagai 'DataAudioOut.wav' ({jenis})")
 
 # ========== PLOT TIME DOMAIN ==========
