@@ -50,13 +50,13 @@ plt.axis('off')
 
 plt.subplot(1, 3, 3)
 plt.imshow(img_rgb)
- plt.subplot(1, 3, 3)
-    plt.imshow(img_rgb)
-    for i, prop in enumerate(stats):
-        y, x = prop.centroid  # Centroid di skimage berurutan (baris/y, kolom/x)
-        plt.text(x, y, str(i + 1), color='red', fontsize=12, fontweight='bold', ha='center', va='center')
-    plt.title('Identifikasi & Penomoran Ubin')
-    plt.axis('off')
+plt.subplot(1, 3, 3)
+plt.imshow(img_rgb)
+for i, prop in enumerate(stats):
+    y, x = prop.centroid  # Centroid di skimage berurutan (baris/y, kolom/x)
+plt.text(x, y, str(i + 1), color='red', fontsize=12, fontweight='bold', ha='center', va='center')
+plt.title('Identifikasi & Penomoran Ubin')
+plt.axis('off')
 plt.title('Identifikasi Ubin')
 plt.axis('off')
 
