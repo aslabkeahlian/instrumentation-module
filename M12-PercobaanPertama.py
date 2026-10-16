@@ -1,3 +1,5 @@
+# JGN LUPA DOWNLOAD LIBRARY CV2 DAN SKIMAGE
+
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
@@ -54,7 +56,8 @@ plt.subplot(1, 3, 3)
 plt.imshow(img_rgb)
 for i, prop in enumerate(stats):
     y, x = prop.centroid  # Centroid di skimage berurutan (baris/y, kolom/x)
-plt.text(x, y, str(i + 1), color='red', fontsize=12, fontweight='bold', ha='center', va='center')
+    plt.text(x, y, str(i + 1), color='red', fontsize=12, fontweight='bold', ha='center', va='center')
+
 plt.title('Identifikasi & Penomoran Ubin')
 plt.axis('off')
 plt.title('Identifikasi Ubin')
