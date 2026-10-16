@@ -55,8 +55,7 @@ for i in range(1, num_labels):
     cx, cy = centroids[i]
     plt.text(cx, cy, str(i), color='red', fontsize=10, fontweight='bold', ha='center')
     plt.text(cx, cy + 15, f"{area_px} px", color='blue', fontsize=7, ha='center')
-
-print(f"Pulau {i}: {area_px} piksel")
+    print(f"Pulau {i}: {area_px} piksel")
 
 plt.title('3. Identifikasi & Luas (px)')
 plt.axis('off')
