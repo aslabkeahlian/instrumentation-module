@@ -1,3 +1,5 @@
+# JGN LUPA DOWNLOAD LIBRARY CV2 DAN SKIMAGE
+
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
