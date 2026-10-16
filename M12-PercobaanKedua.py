@@ -56,8 +56,8 @@ plt.imshow(img_rgb)
 
 for i, prop in enumerate(stats):
     y, x = prop.centroid
-    
-plt.text(x, y, str(i + 1), color='red', fontsize=10, fontweight='bold', ha='center', va='center')
+    plt.text(x, y, str(i + 1), color='red', fontsize=10, fontweight='bold', ha='center', va='center')
+
 plt.title('Identifikasi Ubin Marmer')
 plt.axis('off')
 
